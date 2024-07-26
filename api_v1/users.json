@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@system.com",
+      "password": "$2b$08$KcBCDaII1hHVUCUAO0qYROGf3jBQxmjoYdi.fCNAiqo4gaSvXsRzm",
+      "expires_at": "2024-07-26T23:59:59.0000000-03:00",
+      "accessUser": ["*"],
+      "token": "1|836e5fadc9904eb878acac06e3846f895AFlmNiwoLQJGl9183k9KbCKahdObFwtzTuosDt311743261"
+    }
+  ]
+}
