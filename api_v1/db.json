@@ -1279,6 +1279,11 @@
       "campaignCode": "sdffsdf",
       "campaignName": "Teste 2",
       "id": 6
+    },
+    {
+      "campaignCode": "ASDT4R",
+      "campaignName": "Nova Campanha",
+      "id": 7
     }
   ],
   "products": [
