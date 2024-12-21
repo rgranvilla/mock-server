@@ -1,4 +1,4 @@
-# rgranvilla-mock-server
+# Mock Server V1.0
 
 ## Descrição
 Este repositório é um servidor mock protegido, construído com json-server e JWT (JSON Web Tokens). Ele permite que desenvolvedores front-end trabalhem com dados simulados antes que o backend seja completamente implementado. Inclui ferramentas para geração de dados mock, hashing de senhas e suporte para inicializar o servidor com ou sem autenticação.
