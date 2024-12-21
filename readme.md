@@ -1,75 +1,99 @@
-# Protected REST API with json-server and JWT
+# rgranvilla-mock-server
 
-This project is a protected REST API built using json-server and JWT (JSON Web Tokens). It allows frontend developers to work with mock data before the backend is fully implemented. The project includes tools for generating mock data and hashing user passwords, and it supports starting the server with or without authentication.
+## Descrição
+Este repositório é um servidor mock protegido, construído com json-server e JWT (JSON Web Tokens). Ele permite que desenvolvedores front-end trabalhem com dados simulados antes que o backend seja completamente implementado. Inclui ferramentas para geração de dados mock, hashing de senhas e suporte para inicializar o servidor com ou sem autenticação.
 
-## Usage
+## Recursos principais
+- **Autenticação JWT**: Implementação de endpoints protegidos com tokens JWT.
+- **Geração de dados mock**: Uso do `@faker-js/faker` para popular o banco de dados JSON com dados realistas.
+- **Mock de APIs RESTful**: Criação automática de endpoints baseados no arquivo `db.json`.
+- **Customização de respostas**: Middleware para paginação e filtros de busca.
 
-1. Clone the repository:
+## Estrutura do diretório
+```plaintext
+rgranvilla-mock-server/
+├── api_v1/
+│   ├── server.js        # Servidor principal com autenticação
+│   ├── generateData.js  # Script para geração de dados mock
+│   ├── users.json       # Arquivo com dados de usuários
+│   ├── db.json          # Banco de dados fake
+│   └── tools.js         # Ferramentas auxiliares
+├── package.json         # Dependências e scripts
+└── readme.md            # Documentação do projeto
+```
 
-   ```sh
-   git clone <repository-url>
-   cd <repository-directory>
+## Como executar
+
+### Requisitos
+- Node.js instalado.
+
+### Instruções
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/rgranvilla/rgranvilla-mock-server.git
+   cd rgranvilla-mock-server
    ```
-
-2. Install dependencies:
-
-   ```sh
-   yarn
+2. Instale as dependências:
+   ```bash
+   npm install
    ```
-
-3. Generate mock data:
-
-   ```sh
-   yarn mock-data
+3. Gere dados mock:
+   ```bash
+   npm run mock-data
    ```
-
-4. Start the server:
-
-   - Without authentication:
-     ```sh
-     yarn start
+4. Execute o servidor:
+   - Sem autenticação:
+     ```bash
+     npm start
      ```
-   - With authentication:
-     ```sh
-     yarn start-auth
+   - Com autenticação:
+     ```bash
+     npm run start-auth
      ```
+5. Para gerar senhas com hash:
+   ```bash
+   npm run hash
+   ```
 
-## Start/Stop servers
+O servidor estará disponível em: `http://localhost:3000`
 
-| Description               | Script            |
-| ------------------------- | ----------------- |
-| Start server without auth | `yarn start`      |
-| Start server with auth    | `yarn start-auth` |
+## Início rápido dos servidores
+| Descrição                 | Script         |
+|---------------------------|----------------|
+| Iniciar servidor sem auth | `npm start`    |
+| Iniciar servidor com auth | `npm run start-auth` |
 
-## Tools
+## Ferramentas disponíveis
+| Descrição                     | Script           |
+|-------------------------------|------------------|
+| Gerar dados mock              | `npm run mock-data` |
+| Gerar senhas com hash         | `npm run hash`      |
 
-| Description                    | Script           |
-| ------------------------------ | ---------------- |
-| Generate mock data             | `yarn mock-data` |
-| Generate user hashed passwords | `yarn hash`      |
+## Endpoints do servidor com autenticação
+| Endpoint                     | Descrição               |
+|------------------------------|-------------------------|
+| `localhost:3000/auth/login`  | Login de usuário        |
+| `localhost:3000/purchases`   | Lista de compras (token necessário) |
+| `localhost:3000/campaigns`   | Lista de campanhas (token necessário) |
 
-## Endpoints for auth server
+## Dependências principais
+- `bcrypt`: Para hashing de senhas.
+- `body-parser`: Para parsing de corpos de requisição.
+- `cors`: Para habilitar CORS (Cross-Origin Resource Sharing).
+- `json-server`: Para criar o servidor mock.
+- `jsonwebtoken`: Para criar e verificar tokens JWT.
+- `@faker-js/faker`: Para geração de dados mock.
+- `moment`: Para manipulação de datas.
+- `ramda`: Para utilitários de programação funcional.
 
-| Endpoint                    | Description                   |
-| --------------------------- | ----------------------------- |
-| `localhost:3000/auth/login` | Login user                    |
-| `localhost:3000/purchases`  | Purchases list (token needed) |
-| `localhost:3000/campaigns`  | Campaigns list (token needed) |
+## Contribuições
+Sugestões e feedback são bem-vindos via Pull Requests ou Issues no repositório.
 
-## Scripts
+## Licença
+Este projeto está licenciado sob a [MIT License](./LICENSE).
 
-- `yarn start`: Starts the server without authentication.
-- `yarn start-auth`: Starts the server with authentication.
-- `yarn mock-data`: Generates mock data and writes it to `api_v1/db.json`.
-- `yarn hash`: Generates hashed passwords for users.
+## Desenvolvedor
 
-## Dependencies
+[![Ricardo Granvilla](./assets/author.png)](https://github.com/rgranvilla)
 
-- `bcrypt`: For hashing passwords.
-- `body-parser`: For parsing request bodies.
-- `cors`: For enabling Cross-Origin Resource Sharing.
-- `json-server`: For creating the mock server.
-- `jsonwebtoken`: For creating and verifying JWT tokens.
-- `@faker-js/faker`: For generating mock data.
-- `moment`: For date manipulation.
-- `ramda`: For functional programming utilities.
+[Ricardo Granvilla 🚀](https://github.com/rgranvilla)
